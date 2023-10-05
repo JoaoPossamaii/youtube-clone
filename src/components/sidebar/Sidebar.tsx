@@ -1,18 +1,19 @@
+import { useSelector } from 'react-redux';
 import categoriesData from '../../../data/DataIndex'
 
 
 function SideBar() {
 
-  const categories = [...categoriesData];
+  const {categories} = useSelector((reduxState) => reduxState.movies);
 
   return (
     <aside className='sidebar'>
       {categories.map((category) => (
-        <div className='category-list'>
+        <div className='category-list' key={category.id}>
           <h3>{category.name}</h3>
           <ul>
             {category.movies.map((movie) => (
-              <li>
+              <li key={movie.id}>
                 <button
                   type='button'
                   onClick={() => console.log(movie, category)}
