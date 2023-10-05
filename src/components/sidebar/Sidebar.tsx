@@ -1,12 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectMovie } from '../../redux/actions/actionIndex';
 // import categoriesData from '../../../data/DataIndex'
 import { GlobalReduxState } from '../../types';
 
 
 function SideBar() {
 
-  const {categories} = useSelector((reduxState: GlobalReduxState) => reduxState.movies);
-  
+  const { categories } = useSelector((reduxState: GlobalReduxState) => reduxState.movies);
+
+  const dispatch = useDispatch();
 
   return (
     <aside className='sidebar'>
@@ -18,7 +20,7 @@ function SideBar() {
               <li key={movie.id}>
                 <button
                   type='button'
-                  onClick={() => console.log(movie, category)}
+                  onClick={() => dispatch(selectMovie(movie))}
                 >
                   {movie.title}
                   {movie.released}
