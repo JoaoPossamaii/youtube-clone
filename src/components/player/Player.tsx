@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import categories from "../../../data/DataIndex";
 
 function Player() {
 
-  const selectedMovie = categories[0].movies[0];
+  const { selectedMovie } = useSelector((reduxState) => reduxState.movies);
+
   const isFavorite = false;
 
 
