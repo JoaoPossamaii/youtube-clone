@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
-import categoriesData from '../../../data/DataIndex'
+// import categoriesData from '../../../data/DataIndex'
+import { GlobalReduxState } from '../../types';
 
 
 function SideBar() {
 
-  const {categories} = useSelector((reduxState) => reduxState.movies);
+  const {categories} = useSelector((reduxState: GlobalReduxState) => reduxState.movies);
+  
 
   return (
     <aside className='sidebar'>
