@@ -1,4 +1,5 @@
 import categories from '../../../data/DataIndex';
+import { MoviesReducerState } from '../../types';
 
 
 const INITIAL_STATE = {
@@ -6,6 +7,6 @@ const INITIAL_STATE = {
   categories: [...categories], 
 };
 
-const moviesReducer = (state = INITIAL_STATE, action) => state;
+const moviesReducer = (state: MoviesReducerState = INITIAL_STATE, action:AnyAction) => state;
 
 export default moviesReducer;
