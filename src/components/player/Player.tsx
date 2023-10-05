@@ -1,3 +1,5 @@
+import categories from "../../../data/DataIndex";
+
 function Player() {
 
   const selectedMovie = categories[0].movies[0];
@@ -19,7 +21,7 @@ function Player() {
             <div className='movie-infos'>
               <h2> {selectedMovie.title}</h2>
               <p> Released in {selectedMovie.released}</p>
-              <p className='category'> {selectedMovie.title}</p>
+              {/* <p className='category'> {selectedMovie.title}</p> */}
             </div>
             <div>
               <button

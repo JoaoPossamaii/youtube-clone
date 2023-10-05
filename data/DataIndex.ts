@@ -1,17 +1,17 @@
 const categories = [
   {
     id: 1,
-    name: 'Action',
-    movies: [
-      { id: 4, title: 'Shooter', released: 2007, embedID: 'afafdf' }
-    ],
-  },
-  {
-    id: 2,
     name: 'Anime',
     movies: [
       { id: 1, title: 'Sakura Card Captor: movie', released: 2001, embedID: 'afddd' },
       { id: 2, title: 'Fairy tail: the movie', released: 2019, embedID: 'kjiefg' },
+    ],
+  },
+  {
+    id: 2,
+    name: 'Natal',
+    movies: [
+      { id: 4, title: 'Single All the Way', released: 2021, embedID: 'afafdf' }
     ],
   },
   {

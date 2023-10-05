@@ -1,4 +1,4 @@
-import { composeWithDevTools } from "@redux-devtools/extension/lib/types/logOnly";
+import { composeWithDevTools } from "@redux-devtools/extension";
 import { legacy_createStore as createStore } from "redux";
 import categories from '../../data/DataIndex';
 
