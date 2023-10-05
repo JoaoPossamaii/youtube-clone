@@ -1,11 +1,13 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import categories from "../../../data/DataIndex";
 import { GlobalReduxState } from "../../types";
+import { updatedFavoriteMovie } from "../../redux/actions/actionIndex";
 
 function Player() {
 
   const { selectedMovie } = useSelector((reduxState: GlobalReduxState) => reduxState.movies);
- 
+
+  const dispatch = useDispatch();
   const isFavorite = false;
 
 
@@ -29,9 +31,9 @@ function Player() {
             <div>
               <button
                 type='button'
-                onClick={() => console.log(selectedMovie)}
+                onClick={() => dispatch(updatedFavoriteMovie(selectedMovie.id))}
               >
-                {isFavorite ? ' remove from favorite' : 'add form favorite'}
+                {isFavorite ? ' X remove from favorite' : 'O add form favorite'}
               </button>
             </div>
           </div>
