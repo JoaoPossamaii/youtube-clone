@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Player() {
 
   const selectedMovie = categories[0].movies[0];

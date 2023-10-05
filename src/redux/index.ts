@@ -1,6 +1,6 @@
 import { composeWithDevTools } from "@redux-devtools/extension/lib/types/logOnly";
 import { legacy_createStore as createStore } from "redux";
-import categories from '../data/data_index';
+import categories from '../../data/DataIndex';
 
 
 const INITIAL_STATE = {
