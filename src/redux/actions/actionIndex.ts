@@ -13,6 +13,6 @@ export const selectMovie = (movie: Movie) => {
 export const updatedFavoriteMovie = (movieId: number) => {
    return {
       type:UPDATE_FAVORITE_MOVIES,
-      payload:movieId
+      payload:movieId,
    };
 };

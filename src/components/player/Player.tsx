@@ -6,9 +6,10 @@ import { updatedFavoriteMovie } from "../../redux/actions/actionIndex";
 function Player() {
 
   const { selectedMovie } = useSelector((reduxState: GlobalReduxState) => reduxState.movies);
+  const favorites = useSelector((reduxState: GlobalReduxState) => reduxState.favorites);
 
   const dispatch = useDispatch();
-  const isFavorite = false;
+  const isFavorite = favorites.favoritesMovies.includes(selectedMovie.id);
 
 
   return (
@@ -17,7 +18,8 @@ function Player() {
         <>
           <div className='video-container'>
             <iframe width="560" height="315"
-              src="https://www.youtube.com/embed/O0KVFmrAfB0?si=7M49BmggrASd1gBR" title="YouTube video player"
+              src={`https://www.youtube.com/embed/${selectedMovie.embedID}`}
+              title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
@@ -26,7 +28,6 @@ function Player() {
             <div className='movie-infos'>
               <h2> {selectedMovie.title}</h2>
               <p> Released in {selectedMovie.released}</p>
-              {/* <p className='category'> {selectedMovie.title}</p> */}
             </div>
             <div>
               <button

@@ -12,16 +12,16 @@ const favoritesReducer = (
 ) => {
   switch (action.type) {
     case UPDATE_FAVORITE_MOVIES: {
-      if (state.favoriteMovies.includes(action.payload.movieId))
+      if (state.favoritesMovies.includes(action.payload)) {
         return {
           ...state,
-          favoriteMovies: state.favoriteMovies.filter((movie) => movie !== action.payload.movieId)
-
-        }
+          favoriteMovies: state.favoritesMovies.filter((movie) => movie !== action.payload)
+        };
+      }
       return {
         ...state,
-        favoriteMovies: [...state.favoriteMovies, action.payload.movieId]
-      }
+        favoriteMovies: [...state.favoritesMovies, action.payload],
+      };
     }
     default: return state;
   }

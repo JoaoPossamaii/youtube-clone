@@ -18,7 +18,7 @@ export type MoviesReducerState = {
 
 export type FavoritesReducerState = {
   // guardar os ids dos filmes favoritos
-  favoriteMovies: number[];
+  favoritesMovies: number[]
 };
 
 export type GlobalReduxState = {
